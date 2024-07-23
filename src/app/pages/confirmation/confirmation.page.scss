@@ -1,0 +1,135 @@
+.ticket {
+  background: white;
+  border-radius: 15px;
+  padding: 20px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  margin: 20px;
+  position: relative;
+  overflow: hidden;
+}
+
+.ticket-header {
+  display: flex;
+  justify-content: space-between;
+}
+
+.ticket-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.left-info {
+  display: grid;
+  grid-template-columns: auto auto 1fr;
+  column-gap: 10px;
+  row-gap: 10px;
+  align-items: center;
+}
+
+.info-row {
+  display: contents;
+}
+
+.p {
+  font-weight: bold;
+  
+}
+
+.label {
+  font-weight: bold;
+  white-space: nowrap;
+}
+
+.value {
+  text-align: right;
+  white-space: normal;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  justify-self: end;
+  padding-right: 0;
+  margin-right: 0;
+}
+
+.ticket-divider {
+  border-top: 2px dashed #ccc;
+  margin: 20px 0;
+}
+
+.ticket-body {
+  text-align: center;
+}
+
+.ticket-body h1 {
+  font-size: 3em;
+  margin: 10px 0;
+}
+
+.additional-info {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.info-left, .info-right {
+  display: flex;
+  flex-direction: column; /* Mengatur tata letak kolom untuk teks dan ikon */
+  align-items: center;
+  text-align: center;
+  margin-top: 10px;
+}
+
+.info-left .text-group p {
+  text-align: left;
+}
+
+
+.text-group p {
+  margin: 0;
+}
+
+.text-group ion-icon {
+  margin-top: 5px; /* Menambahkan jarak antara teks dan ikon */
+  font-size: 1.5em; /* Mengatur ukuran ikon sesuai kebutuhan */
+}
+
+
+.value-icon {
+  display: flex;
+  align-items: center; /* Menyelaraskan ikon dan nilai secara vertikal */
+  margin-top: 7px; /* Menambahkan jarak antara teks dan ikon */
+}
+
+.value-icon ion-icon {
+  margin-right: 5px; /* Menambahkan jarak antara ikon dan nilai */
+  font-size: 1.3em; /* Mengatur ukuran ikon sesuai kebutuhan */
+}
+
+.notice {
+  color: red;
+  margin-top: 20px;
+  text-align: center;
+}
+
+.cancel-button {
+  background-color: #007bff ;
+  color: white;
+  border: none;
+  padding: 15px 30px; /* Ukuran tombol lebih besar */
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1.2em; /* Ukuran font lebih besar */
+  margin: 20px auto; /* Tengah halaman */
+  display: block; /* Tengah halaman */
+}
+
+.tensi-button {
+  background-color: #87e7ae;
+  color: white;
+  border: none;
+  padding: 15px 30px; /* Ukuran tombol lebih besar */
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1.2em; /* Ukuran font lebih besar */
+  margin: 20px auto; /* Tengah halaman */
+  display: block; /* Tengah halaman */
+}

@@ -3,7 +3,7 @@
     <ion-buttons slot="start">
       <ion-back-button defaultHref="/clinic/{{doctorID}}"></ion-back-button>
     </ion-buttons>
-    <ion-title>Doctor</ion-title>
+    <ion-title>Dokter</ion-title>
   </ion-toolbar>
 </ion-header>
 
@@ -19,8 +19,9 @@
       </ion-col>
       <ion-col class="profile-name">
         <ion-text>
-          <h3 class="ion-no-margin">Dr. {{items?.doctor_lastname}}<br>{{items?.doctor_firstname}}</h3>
-          <p class="ion-no-margin">{{items?.speciality_name}}</p>
+          <h3 class="ion-no-margin">Dr. {{items?.doctor_firstname}} {{items?.doctor_lastname}} </h3>
+          <p class="ion-no-margin clinic-name">{{items?.clinic_name}}</p> <!-- Tambahkan baris ini -->
+          <p class="ion-no-margin speciality-name">Poli {{items?.speciality_name}}</p>
         </ion-text>
       </ion-col>
     </ion-row>
@@ -28,7 +29,7 @@
 
   <div class="ion-padding-horizontal">
     <ion-row class="doctor-info">
-      <ion-col>
+      <!-- <ion-col>
         <small>Consultation Fees</small>
         <h6>RM {{items?.consult_fee}}</h6>
       </ion-col>
@@ -36,10 +37,10 @@
         <small>Reviews</small>
         <h6 *ngIf="countReviews == 0">0.0</h6>
         <h6 *ngIf="countReviews > 0">{{totalReviewRate}}</h6>
-      </ion-col>
+      </ion-col> -->
     </ion-row>
     
-    <h6 class="section-title"><b>Description</b></h6>
+    <h6 class="section-title"><b>Deskripsi</b></h6>
     <ion-text class="ion-text-justify clinic-desc">
       <p>{{items?.doctor_desc}}</p>
     </ion-text>
@@ -48,16 +49,23 @@
   <ion-text class="ion-text-justify doctor-details">
     <ion-list lines="none">
       <ion-item>
-        <ion-badge color="dark" class="details-title">Language Spoke</ion-badge>
+        <ion-badge color="dark" class="details-title">Bahasa</ion-badge>
         <ion-label>{{items?.doctor_spoke}}</ion-label>
       </ion-item>
     </ion-list>
   </ion-text>
 
   <div class="booking-wrap">
-    <h6 class="section-title ion-padding-horizontal"><b>Select Date and Time</b></h6>
-    <div class="date-picker">
-      <ion-datetime (ionBlur)="DateSlotChange($event)" (ionChange)="DateSlotChange($event)" displayFormat="DD MMM YYYY" [min]="minDate" pickerFormat="DD MMM YYYY" placeholder="Select Date"></ion-datetime>
+    <h6 class="section-title ion-padding-horizontal"><b>Pilih Tanggal Janji Temu</b></h6>
+    <div class="date-picker-container">
+      <ion-datetime 
+        (ionBlur)="DateSlotChange($event)" 
+        (ionChange)="DateSlotChange($event)" 
+        displayFormat="DD MMM YYYY" 
+        [min]="minDate" 
+        pickerFormat="DD MMM YYYY" 
+        placeholder="Ketuk untuk Pilih Tanggal">
+      </ion-datetime>
     </div>
     <div class="select-timeslot ion-padding-vertical">
       <ion-segment (ionChange)="TimeSlotChange($event)">
@@ -67,8 +75,10 @@
       </ion-segment>
     </div>
   </div>
+  
 </ion-content>
 
 <ion-footer no-border>
-  <ion-button expand="block" color="tertiary" (click)="Book()">Proceed</ion-button>
+ <ion-button expand="block" color="tertiary" (click)="GoToSessionSelection()">Selanjutnya</ion-button>
+
 </ion-footer>

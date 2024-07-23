@@ -15,8 +15,8 @@ ion-toolbar {
 
 .profile-card {
     background: var(--ion-color-tertiary);
-    background: -webkit-linear-gradient(to right, #653EE6, #7044ff);
-    background: linear-gradient(to right, #653EE6, #7044ff);
+    background: -webkit-linear-gradient(to right, #87e7ae, #87d7e7);
+    background: linear-gradient(to right, #87e7ae, #87d7e7);
     padding-top: 20px;
     padding-bottom: 100px;
     border-radius: 0 0 30px 30px;
@@ -50,6 +50,18 @@ ion-toolbar {
     }
 }
 
+.clinic-name {
+    margin-top: 10px;
+    margin-bottom: 10px; /* Tambahkan margin bawah */
+    font-weight: bold;
+    font-size: 20px;
+  }
+  
+  .speciality-name {
+    margin-top: 10px; /* Tambahkan margin atas */
+  }
+  
+
 .doctor-details {
     .details-title {
         margin-right: 5px;
@@ -78,3 +90,17 @@ ion-toolbar {
         font-size: 14pt;
     }
 }
+
+.date-picker-container {
+    border: 2px solid #d3d3d3; /* Warna dan ketebalan border */
+    border-radius: 8px; /* Sudut border melengkung */
+    padding: 10px; /* Jarak antara border dan konten di dalamnya */
+    text-align: center; /* Teks di dalamnya di tengah-tengah */
+    max-width: 80%; /* Lebar maksimal dari kotak */
+    margin: 0 auto; /* Agar kotak tetap di tengah */
+  }
+  
+  .date-picker-container ion-datetime {
+    width: 100%; /* Membuat datetime picker mengisi seluruh lebar kotak */
+  }
+  

@@ -1,0 +1,70 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref=""></ion-back-button>
+    </ion-buttons>
+    <ion-title>Pilih Jam Periksa</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div class="selected-date">
+    Tanggal dipilih: {{ selectedDate }}
+  </div>
+  
+  <div class="content-wrapper">
+    <ion-card>
+      <ion-card-content>
+        <div class="session-grid">
+          <ion-button expand="block" color="light" class="session-button" (click)="selectSession(1, 'Sesi 1 (08:00 - 09:00)')">
+            Sesi 1 (08:00 - 09:00)
+          </ion-button>
+          <ion-button expand="block" color="light" class="session-button" (click)="selectSession(2, 'Sesi 2 (09:00 - 10:00)')">
+            Sesi 2 (09:00 - 10:00)
+          </ion-button>
+          <ion-button expand="block" color="light" class="session-button" (click)="selectSession(3, 'Sesi 3 (10:00 - 11:00)')">
+            Sesi 3 (10:00 - 11:00)
+          </ion-button>
+          <ion-button expand="block" color="light" class="session-button" (click)="selectSession(4, 'Sesi 4 (11:00 - 12:00)')">
+            Sesi 4 (11:00 - 12:00)
+          </ion-button>
+          <ion-button expand="block" color="light" class="session-button" (click)="selectSession(5, 'Sesi 5 (12:00 - 13:00)')">
+            Sesi 5 (12:00 - 13:00)
+          </ion-button>
+          <ion-button expand="block" color="light" class="session-button" (click)="selectSession(6, 'Sesi 6 (13:00 - 14:00)')">
+            Sesi 6 (13:00 - 14:00)
+          </ion-button>
+          <ion-button expand="block" color="light" class="session-button" (click)="selectSession(7, 'Sesi 7 (14:00 - 15:00)')">
+            Sesi 7 (14:00 - 15:00)
+          </ion-button>
+          <ion-button expand="block" color="light" class="session-button" (click)="selectSession(8, 'Sesi 8 (15:00 - 16:00)')">
+            Sesi 8 (15:00 - 16:00)
+          </ion-button>
+          <ion-button expand="block" color="light" class="session-button" (click)="selectSession(9, 'Sesi 9 (16:00 - 17:00)')">
+            Sesi 9 (16:00 - 17:00)
+          </ion-button>
+          <ion-button expand="block" color="light" class="session-button" (click)="selectSession(10, 'Sesi 10 (17:00 - 18:00)')">
+            Sesi 10 (17:00 - 18:00)
+          </ion-button>
+          <ion-button expand="block" color="light" class="session-button" (click)="selectSession(11, 'Sesi 11 (18:00 - 19:00)')">
+            Sesi 11 (18:00 - 19:00)
+          </ion-button>
+          <ion-button expand="block" color="light" class="session-button" (click)="selectSession(12, 'Sesi 12 (19:00 - 20:00)')">
+            Sesi 12 (19:00 - 20:00)
+          </ion-button>
+          <ion-button expand="block" color="light" class="session-button" (click)="selectSession(13, 'Sesi 13 (20:00 - 21:00)')">
+            Sesi 13 (20:00 - 21:00)
+          </ion-button>
+          <ion-button expand="block" color="light" class="session-button" (click)="selectSession(14, 'Sesi 14 (21:00 - 22:00)')">
+            Sesi 14 (21:00 - 22:00)
+          </ion-button>
+          <ion-button expand="block" color="light" class="session-button" (click)="selectSession(15, 'Sesi 15 (22:00 - 23:00)')">
+            Sesi 15 (22:00 - 23:00)
+          </ion-button>
+          
+        </div>
+      </ion-card-content>
+    </ion-card>
+ 
+</div>
+</ion-content>

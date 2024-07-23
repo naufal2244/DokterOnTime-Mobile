@@ -1,5 +1,5 @@
 <div class="ion-padding-horizontal ion-margin-top">
-  <h2 class="page-title">Notifications</h2>
+  <h2 class="page-title">Notifikasi</h2>
 </div>
 
 <ion-content>
@@ -11,7 +11,7 @@
     </ion-refresher-content>
   </ion-refresher>
   
-  <div class="ion-padding-horizontal" *ngIf="empty == 1"><h5>No Notification</h5></div>
+  <div class="ion-padding-horizontal" *ngIf="empty == 1"><h5>Tidak Ada Pengumuman</h5></div>
   <ion-list>
     <ion-item *ngFor="let item of items">
       <ion-label class="ion-text-wrap">
@@ -20,7 +20,7 @@
         </ion-text>
         <p>{{item.ann_content}}</p>
         <ion-text color="medium">
-          <p>{{item.date_created}} by {{item.clinic_name}}</p>
+          <p>{{item.date_created}} oleh {{item.clinic_name}}</p>
         </ion-text>
       </ion-label>
     </ion-item>

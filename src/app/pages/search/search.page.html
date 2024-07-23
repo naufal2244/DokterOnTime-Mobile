@@ -1,9 +1,9 @@
 <div class="ion-page" id="filter">
   <div class="ion-padding-horizontal ion-margin-top">
-    <h2 class="page-title">Search</h2>
+    <h2 class="page-title">Cari</h2>
   </div>
   <div class="searchbar">
-    <ion-searchbar (click)="SearchBar()"></ion-searchbar>
+    <ion-searchbar placeholder="Cari"   (click)="SearchBar()"></ion-searchbar>
   </div>
 
   <ion-content>
@@ -15,7 +15,7 @@
             <ion-thumbnail slot="start">
               <img src="https://img.icons8.com/color/96/000000/clinic.png">
             </ion-thumbnail>
-            <h5>All Clinic</h5>
+            <h5>Semua Klinik</h5>
           </ion-card>
         </ion-col>
         <ion-col>
@@ -23,7 +23,7 @@
             <ion-thumbnail slot="start">
               <img src="https://img.icons8.com/color/96/000000/medical-doctor.png">
             </ion-thumbnail>
-            <h5>All Doctor</h5>
+            <h5>Semua Dokter</h5>
           </ion-card>
         </ion-col>
 
@@ -40,11 +40,7 @@
 
     </div>
 
-    <ion-fab vertical="bottom" horizontal="end" slot="fixed">
-      <ion-fab-button color="tertiary" (click)="showMenu()">
-        <ion-icon name="color-filter"></ion-icon>
-      </ion-fab-button>
-    </ion-fab>
+   
 
   </ion-content>
 </div>

@@ -1,0 +1,68 @@
+<ion-content *ngIf="appointmentData">
+  <div class="ticket">
+    <div class="ticket-header">
+      <div class="ticket-info">
+        <div class="left-info">
+          <div class="info-row">
+            <ion-icon name="md-medkit"></ion-icon>
+            <span class="label">Rumah Sakit</span>
+            <span class="value">{{ appointmentData?.clinic_name }}</span>
+          </div>
+          <div class="info-row">
+            <ion-icon name="md-heart"></ion-icon>
+            <span class="label">Poli</span>
+            <span class="value">{{appointmentData.doctor_speciality}}</span>
+          </div>
+          <div class="info-row">
+            <ion-icon name="md-person"></ion-icon>
+            <span class="label">Dokter</span>
+            <span class="value">{{appointmentData.doctor_firstname}} {{appointmentData.doctor_lastname}}</span>
+          </div>
+          <div class="info-row">
+            <ion-icon name="md-calendar"></ion-icon>
+            <span class="label">Tanggal Kunjungan</span>
+            <span class="value">{{appointmentData.tanggal_janji}}</span>
+          </div>
+          <div class="info-row">
+            <ion-icon name="md-time"></ion-icon>
+            <span class="label">Jam Kunjungan</span>
+            <span class="value">{{appointmentData.session_start}} - {{appointmentData.session_end}}</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="ticket-divider"></div>
+    <div class="ticket-body">
+      <h1>Nomor Antrean</h1>
+      <h1>{{displayAntrian}}</h1>
+      <div class="additional-info">
+        <div class="info-left">
+          <div class="text-group">
+            <p class="p">Jadwal No </p>
+            <p class="p">Antri {{previousAntrian}}</p>
+            <div class="value-icon">
+              <ion-icon name="md-time"></ion-icon>
+              <p><span class="value">{{previousSessionStart}} - {{previousSessionEnd}}</span></p>
+            </div>
+          </div>
+        </div>
+        <div class="info-right">
+          <div class="text-group">
+            <p class="p">Pasien</p>
+            <p class="p">Dilayani</p>
+            <div class="value-icon">
+              <ion-icon name="md-person"></ion-icon>
+              <p><span class="value">{{ currentAntrianDilayani }}</span></p>
+            </div>
+          </div>
+        </div>
+        
+      </div>
+      <p class="notice"><strong>Harap datang 40 menit sebelum jam kunjungan untuk periksa dan isi data tensi di bawah ini</strong></p>
+      <button class="tensi-button" (click)="openTensiModal()">Isi Tensi</button>
+    </div>
+  </div>
+  <button class="cancel-button" (click)="goToHomePage()">Kembali ke Menu</button>
+</ion-content>
+
+

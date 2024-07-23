@@ -1,0 +1,30 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+    </ion-buttons>
+    <ion-title>Lengkapi Data Tensi</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div class="content-wrapper">
+    <ion-card>
+      <ion-card-content>
+        <div class="form-group">
+          <label><b>Isi atau Perbarui Data Tensi</b></label>
+          <div class="tensi-display">
+            <ion-input type="number" placeholder="120" [(ngModel)]="systolic"></ion-input>
+            <span>/</span>
+            <ion-input type="number" placeholder="80" [(ngModel)]="diastolic"></ion-input>
+            <span>mmHg</span>
+          </div>
+        </div>
+      </ion-card-content>
+    </ion-card>
+  </div>
+</ion-content>
+
+<ion-footer no-border>
+  <ion-button expand="block" color="danger" (click)="closeModal()">Batalkan</ion-button>
+  <ion-button expand="block" color="tertiary" (click)="saveTensi()">Save</ion-button>
+</ion-footer>

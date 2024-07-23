@@ -18,6 +18,7 @@ import { ProviderService } from "./services/provider.service";
 import { LoadingService } from './services/loading.service';
 import { ControllersService } from './services/controllers.service';
 import { DatePipe } from '@angular/common';
+import { TensiModalPageModule } from './pages/tensi-modal/tensi-modal.module';
 
 import { LocalNotifications } from '@ionic-native/local-notifications/ngx';
 
@@ -29,6 +30,7 @@ import { LocalNotifications } from '@ionic-native/local-notifications/ngx';
     HttpClientModule,
     IonicModule.forRoot(),
     AppRoutingModule,
+    TensiModalPageModule,
     IonicStorageModule.forRoot(),
   ],
   providers: [

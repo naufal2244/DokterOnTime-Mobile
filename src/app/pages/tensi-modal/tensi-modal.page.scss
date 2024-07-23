@@ -1,0 +1,67 @@
+.content-wrapper {
+  display: flex;
+  justify-content: center;
+}
+
+ion-card {
+  margin-top: 20px;
+  width: 100%;
+  max-width: 800px; /* Atur sesuai kebutuhan */
+  background-color: #f1f1f1; /* warna abu seperti search box */
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column; /* Agar label di atas */
+  align-items: flex-start; /* Posisikan elemen di tengah */
+  margin-bottom: 15px; /* Margin bawah untuk pemisahan */
+}
+
+label {
+  margin-left: 5px;
+  font-size: 12px; /* Ukuran font untuk label */
+  margin-bottom: 5px; /* Margin bawah untuk pemisahan */
+}
+
+ion-input {
+  --padding-start: 10px; /* Padding dalam input */
+  padding: 5px; /* Padding dalam input */
+  --background: #ffffff; /* Warna latar belakang default */
+  border: 1px solid #ccc; /* Menambahkan border */
+  border-radius: 5px; /* Menambahkan border-radius */
+  font-size: 12px; /* Mengatur ukuran font untuk teks dalam input */
+  width: 60px; /* Lebar input sesuai kebutuhan */
+  text-align: center; /* Teks di tengah */
+  margin: 0 5px; /* Margin kiri dan kanan */
+}
+
+.tensi-display {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.tensi-display span {
+  font-size: 16px; /* Ukuran font untuk garis miring dan mmHg */
+  margin: 0 5px; /* Tambahkan margin kiri dan kanan */
+}
+
+ion-footer {
+  padding: 8px 5px;
+  ion-button {
+    height: 45px;
+    font-weight: 500;
+    text-transform: capitalize;
+    border-radius: 8px;
+  }
+}
+
+ion-button {
+  --padding-start: 15px;
+  --padding-end: 15px;
+  --padding-top: 10px;
+  --padding-bottom: 10px;
+  --border-radius: 8px;
+  --font-size: 14px;
+  margin-bottom: 10px;
+}

@@ -3,13 +3,13 @@
     <ion-buttons slot="start">
       <ion-back-button></ion-back-button>
     </ion-buttons>
-    <ion-searchbar (ionInput)="filterData($event)"></ion-searchbar>
+    <ion-searchbar placeholder="Cari Rumah Sakit" (ionInput)="filterData($event)"></ion-searchbar>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
   <ion-list>
-    <ion-list-header>Clinic Result</ion-list-header>
+    <ion-list-header>Daftar Rumah Sakit</ion-list-header>
 
     <ion-item *ngFor="let item of items" (click)="clinicProfile(item.clinic_id)">
       <!-- <ion-avatar slot="start">

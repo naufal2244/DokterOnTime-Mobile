@@ -1,0 +1,52 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref=""></ion-back-button>
+    </ion-buttons>
+    <ion-title>Riwayat Medis</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div class="content-wrapper">
+    <div class="info-section">
+      <div class="info-item">
+        <ion-badge color="success" style="margin-bottom: 5px;">{{ appointmentDate }}  </ion-badge>
+      </div>
+      <div class="info-item">
+        <ion-icon name="md-medkit"></ion-icon>
+        <h5><b>{{ clinicName }}</b></h5>
+      </div>
+      <div class="info-item">
+        <ion-icon name="md-person"></ion-icon>
+        <h6>{{ doctorName }}</h6>
+      </div>
+      <div class="info-item">
+        <ion-icon name="md-heart"></ion-icon>
+        <h6>{{ doctorSpeciality }}</h6>
+      </div>
+    </div>
+    <ion-card>
+      <ion-card-content>
+        <div class="detail-section">
+          <h2><b>Diagnosis</b></h2>
+          <ul>
+            <li *ngFor="let diagnosis of diagnosisList">{{ diagnosis }}</li>
+          </ul>
+          <h2><b>Tindak Lanjut Dokter</b></h2>
+          <ul>
+            <li *ngFor="let tindak of tindakLanjutList">{{ tindak }}</li>
+          </ul>
+          <h2><b>Saran Dokter</b></h2>
+          <ion-textarea [(ngModel)]="saranDokter" readonly></ion-textarea>
+          <h2><b>Obat yang diresepkan</b></h2>
+          <div *ngFor="let obat of obatList">
+            <ion-badge color="primary" class="ppp">{{ obat.nama_obat }}</ion-badge>
+            <p>{{ obat.deskripsi_dosis }}, {{ obat.deskripsi_frekuensi }}</p>
+            <hr>
+          </div>
+        </div>
+      </ion-card-content>
+    </ion-card>
+  </div>
+</ion-content>

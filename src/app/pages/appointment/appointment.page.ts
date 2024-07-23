@@ -12,13 +12,13 @@ export class AppointmentPage implements OnInit {
   items: any;
   id: number;
   imgURL: string = this.providerSvc.imgURL;
-  empty:number;
+  empty: number;
 
   constructor(private storage: Storage, private providerSvc: ProviderService, private router: Router) { }
 
   ngOnInit() {
     this.storage.get('USER_INFO').then(data => {
-      if(data != null) {
+      if (data != null) {
         this.id = data[0].patient_id;
         this.getAppointmentData(this.id);
       }
@@ -34,15 +34,19 @@ export class AppointmentPage implements OnInit {
     }, 1000);
   }
 
-  getAppointmentData(id:number) {
+  getAppointmentData(id: number) {
     let postData = JSON.stringify({
       patientID: this.id
     });
 
     this.providerSvc.postData('appointment-list.php', postData)
       .subscribe(data => {
-        if (data != null) {
-          this.items = data;
+        if (Array.isArray(data) && data.length > 0) {
+          this.items = data.map(item => {
+            item.session_start = this.formatTime(item.session_start);
+            item.session_end = this.formatTime(item.session_end);
+            return item;
+          });
           this.empty = 0;
         } else {
           this.empty = 1;
@@ -53,8 +57,12 @@ export class AppointmentPage implements OnInit {
       });
   }
 
-  appointmentProfile(id: number) {
-    this.router.navigate(['appointment-view', id]);
+  formatTime(time: string): string {
+    // Menghapus .00 di akhir
+    return time.replace(/:00$/, '');
   }
 
+  appointmentProfile(id: number) {
+    this.router.navigate(['confirmation'], { queryParams: { appointmentId: id } });
+  }
 }

@@ -1,45 +1,65 @@
-ion-card {
-    padding: 10px;
-    box-shadow: 0 4px 16px rgba(0,0,0,.12);
+.clinic-img {
+    .swiper-zoom-container {
+      img {
+        width: 100%;
+        height: auto;
+      }
+    }
+  }
+  
+  .clinic-title {
+    font-size: 24px;
+    font-weight: bold;
+  }
+  
+  .clinic-location, .clinic-desc {
+    font-size: 14px;
+    color: #666;
+  }
+  
+  .speciality-card {
+    margin: 0 5px;
+    width: calc(100% - 5px);
+    padding: 12px;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, .12);
     border-radius: 8px;
-    margin-top: 24px;
-    margin-bottom: 24px;
-    background: white;
-}
+    display: flex;
+    flex-direction: column; /* Tambahkan ini */
+    align-items: flex-start;
+    justify-content: center;
+    text-align: left;
+  }
+  
+  .speciality-card ion-thumbnail {
+    width: 60px;
+    height: 60px;
+    margin-bottom: 15px; /* Tambahkan ini untuk jarak antara ikon dan teks */
+  }
 
-.clinic-title {
-    margin-bottom: 0;
-    font-weight: 600;
-}
-
-.clinic-location {
-    margin-top: 4px;
-    font-size: 10pt;
-}
-
-.clinic-info {
+  .speciality-card h5 {
+    text-align: left; /* Tambahkan ini untuk teks */
+    margin: 0; /* Tambahkan ini untuk menghapus margin default */
+    padding-bottom: 10px; /* Menambahkan padding bawah */
+  }
+  
+  .grid {
     ion-col {
-        padding-left: 0;
+      flex: 0 0 50%;
+      max-width: 50%;
+      padding: 5px 0;
     }
-    small {
-        color: var(--ion-color-medium);
-        font-weight: 600;
+  
+    ion-row {
+      padding: 0 10px;
     }
-    h6 {
-        margin: 0;
-        font-weight: 600;
-        font-size: 14pt;
+  }
+  
+  .searchbar {
+    padding-left: 8px;
+    padding-right: 8px;
+  
+    ion-searchbar {
+      border-radius: 10px;
     }
-}
-
-.clinic-desc {
-    font-size: 11pt;
-    color: var(--ion-color-medium);
-
-    ion-icon {
-        margin-top: 5px;
-    }
-    span {
-        margin-left: 5px;
-    }
-}
+  }
+  

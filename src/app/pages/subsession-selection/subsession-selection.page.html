@@ -1,0 +1,32 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref=""></ion-back-button>
+    </ion-buttons>
+    <ion-title>Pilih Jam Periksa</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div class="selected-date">
+    Sesi dipilih: {{ sessionLabel }}
+  </div>
+  
+  <div class="content-wrapper">
+    <ion-card>
+      <ion-card-content>
+        <div class="session-grid">
+          <ion-button *ngFor="let subSession of subSessions; let i = index"
+                      expand="block" 
+                      color="light" 
+                      class="session-button" 
+                      [disabled]="!isSessionAvailable((sessionId - 1) * 3 + i + 1)"
+                      (click)="selectSubSession(i + 1)">
+            {{ subSession }}
+          </ion-button>
+        </div>
+      </ion-card-content>
+    </ion-card>
+ 
+</div>
+</ion-content>

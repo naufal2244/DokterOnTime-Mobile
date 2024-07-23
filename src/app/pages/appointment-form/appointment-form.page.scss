@@ -1,0 +1,86 @@
+.content-wrapper {
+  display: flex;
+  justify-content: center;
+}
+
+ion-card {
+  margin-top: 20px;
+  width: 100%;
+  max-width: 800px; /* Atur sesuai kebutuhan */
+  background-color: #f1f1f1; /* warna abu seperti search box */
+}
+
+.form-grid {
+  display: grid;
+  grid-template-columns: 1fr; /* Default satu kolom */
+  gap: 10px;
+
+  @media (min-width: 601px) {
+    grid-template-columns: 1fr 1fr; /* Dua kolom untuk layar besar */
+  }
+}
+
+.form-baru {
+  display: grid;
+  grid-template-columns: 1fr 1fr; /* Default satu kolom */
+  gap: 10px;
+
+  // @media (min-width: 601px) {
+  //   grid-template-columns: 1fr 1fr; /* Dua kolom untuk layar besar */
+  // }
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+ 
+  margin-bottom: 15px; /* Margin bawah untuk pemisahan */
+}
+
+label {
+  font-size: 12px; /* Ukuran font untuk label */
+  margin-bottom: 5px; /* Margin bawah untuk pemisahan */
+  margin-left: 2px; /* Menyesuaikan margin kiri agar sejajar dengan input */
+}
+
+ion-input, ion-textarea, ion-select {
+  --padding-start: 10px; /* Padding dalam input dan textarea */
+  padding: 5px; /* Padding dalam input dan textarea */
+  --background: #ffffff; /* Warna latar belakang default */
+  border: 1px solid #ccc; /* Menambahkan border */
+  border-radius: 5px; /* Menambahkan border-radius */
+  font-size: 12px; /* Mengatur ukuran font untuk teks dalam input */
+  width: 100%; /* Memastikan elemen mengisi lebar penuh */
+  box-sizing: border-box; /* Sertakan padding dan border dalam perhitungan ukuran elemen */
+}
+
+ion-textarea {
+  min-height: 170px; /* Atur tinggi sesuai kebutuhan dengan !important */
+  max-height: 300px; /* Tambahkan tinggi maksimal */
+  height: 170px; /* Mengatur tinggi tetap */
+  display: block; /* Pastikan textarea tampil sebagai blok */
+  overflow-y: auto; /* Tambahkan overflow untuk scroll vertikal */
+  box-sizing: border-box; /* Sertakan padding dan border dalam perhitungan ukuran elemen */
+  padding: 10px; /* Tambahkan padding untuk kenyamanan teks */
+  line-height: 1.5; /* Tambahkan line-height untuk mengisi teks */
+}
+
+ion-footer {
+  padding: 8px 5px;
+  ion-button {
+      height: 45px;
+      font-weight: 500;
+      text-transform: capitalize;
+      border-radius: 8px;
+  }
+}
+
+ion-button {
+  --padding-start: 15px;
+  --padding-end: 15px;
+  --padding-top: 10px;
+  --padding-bottom: 10px;
+  --border-radius: 8px;
+  --font-size: 14px;
+  margin-bottom: 10px;
+}

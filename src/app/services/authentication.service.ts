@@ -36,7 +36,7 @@ export class AuthenticationService {
 
   login(email: string, password: string) {
     this.loadingSvc.presentLoading();
-    let dataPost = new FormData();
+    let dataPost = new FormData();  
     dataPost.append('inputemail', email);
     dataPost.append('inputpass', password);
 
@@ -48,8 +48,11 @@ export class AuthenticationService {
       if (res[0] == 0) {
         this.loadingSvc.dismissLoading();
         this.alertPopUp("Attention", "Email & Password Incorrect!", "Try Again");
-      } else {
+      }  else {
         this.loadingSvc.dismissLoading();
+        // Assuming the response contains the patient_id in the first object
+        const patient_id = res[0].patient_id;
+        localStorage.setItem('patient_id', patient_id); // Save patient_id to localStorage
         return this.storage.set('USER_INFO', res).then((res) => {
           this.router.navigate(['tabs/home']);
           this.authenticationState.next(true);

@@ -30,7 +30,22 @@ const routes: Routes = [
   { path: 'search-clinic', loadChildren: './pages/search-clinic/search-clinic.module#SearchClinicPageModule' },
   { path: 'search-doctor', loadChildren: './pages/search-doctor/search-doctor.module#SearchDoctorPageModule' },
   { path: 'filter', loadChildren: './pages/filter/filter.module#FilterPageModule' },
+  { path: 'doctor-list/:hospitalId/:specialityId', loadChildren: './pages/doctor-list/doctor-list.module#DoctorListPageModule' },
+  { path: 'filter-dokter', loadChildren: './pages/filter-dokter/filter-dokter.module#FilterDokterPageModule' },
   { path: 'filter-result/:lowerprice/:higherprice/:gender', loadChildren: './pages/filter-result/filter-result.module#FilterResultPageModule' },
+  { path: 'session-selection', loadChildren: './pages/session-selection/session-selection.module#SessionSelectionPageModule' },
+  { path: 'subsession-selection/:sessionId', loadChildren: './pages/subsession-selection/subsession-selection.module#SubsessionSelectionPageModule' },
+   // Tambahkan rute baru ini
+  { path: 'appointment-form', loadChildren: './pages/appointment-form/appointment-form.module#AppointmentFormPageModule' },
+  { path: 'appointment-form-modal', loadChildren: './pages/appointment-form-modal/appointment-form-modal.module#AppointmentFormModalPageModule' },
+  {path: 'confirmation', loadChildren: './pages/confirmation/confirmation.module#ConfirmationPageModule'},
+  { path: 'riwayat-medis', loadChildren: './pages/riwayat-medis/riwayat-medis.module#RiwayatMedisPageModule' },
+  { path: 'riwayat-medis-detail', loadChildren: './pages/riwayat-medis-detail/riwayat-medis-detail.module#RiwayatMedisDetailPageModule' },
+
+  // { path: 'tabs/home', loadChildren: './pages/tabs/home/home.module#HomePageModule' },
+
+
+
   // { path: 'appointment', loadChildren: './pages/appointment/appointment.module#AppointmentPageModule' },
   // { path: 'search', loadChildren: './pages/search/search.module#SearchPageModule' },
   // { path: 'home', loadChildren: './pages/home/home.module#HomePageModule' },

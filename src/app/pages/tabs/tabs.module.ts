@@ -22,8 +22,8 @@ const routes: Routes = [
         loadChildren: '../appointment/appointment.module#AppointmentPageModule'
       },
       {
-        path: 'search',
-        loadChildren: '../search/search.module#SearchPageModule'
+        path: 'riwayat-medis',
+        loadChildren: '../riwayat-medis/riwayat-medis.module#RiwayatMedisPageModule'
       },
       {
         path: 'message',
@@ -33,6 +33,12 @@ const routes: Routes = [
         path: 'profile',
         loadChildren: '../profile/profile.module#ProfilePageModule'
       },
+      {
+        path: 'search',
+        loadChildren: '../search/search.module#SearchPageModule'
+      },
+
+    
     ]
     // ! End
   },

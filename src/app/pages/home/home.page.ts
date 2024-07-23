@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Storage } from '@ionic/storage'
+import { Storage } from '@ionic/storage';
 import { ProviderService } from 'src/app/services/provider.service';
 import { LocalNotifications } from '@ionic-native/local-notifications/ngx';
 import { DatePipe } from '@angular/common';
@@ -25,9 +25,15 @@ export class HomePage implements OnInit {
   doctorAvatar: string;
   currentDate: string;
 
-  empty:number;
+  empty: number;
+  statusPembuatanObat: any;
 
-  constructor(private storage: Storage, private providerSvc: ProviderService, private localNotifications: LocalNotifications, public datePipe: DatePipe) { }
+  constructor(
+    private storage: Storage, 
+    private providerSvc: ProviderService, 
+    private localNotifications: LocalNotifications, 
+    public datePipe: DatePipe
+  ) { }
 
   ngOnInit() {
     this.getData();
@@ -36,11 +42,12 @@ export class HomePage implements OnInit {
 
   getData() {
     this.storage.get('USER_INFO').then(data => {
-      if(data != null) {
+      if (data != null) {
         this.items = data;
         this.patientID = data[0].patient_id;
         this.patientFirstname = data[0].patient_firstname;
         this.getAppointmentData(this.patientID);
+        this.getStatusPembuatanObat(this.patientID);
         this.imgURL = this.providerSvc.imgURL;
       }
     }, error => {
@@ -56,14 +63,14 @@ export class HomePage implements OnInit {
       if (appdata != null) {
         this.clinicID = appdata[0].clinic_id;
         this.doctorID = appdata[0].doctor_id;
-        this.doctorName = appdata[0].doctor_lastname +" "+ appdata[0].doctor_firstname;
+        this.doctorName = appdata[0].doctor_lastname + " " + appdata[0].doctor_firstname;
         this.doctorAvatar = appdata[0].doctor_avatar;
-        this.appDate = appdata[0].app_date;
-        this.appTime = appdata[0].app_time;
+        this.appDate = appdata[0].tanggal_janji;
+        this.appTime = appdata[0].session_start;
         this.Speciality = appdata[0].speciality_name;
         this.empty = 0;
 
-        var currentDate = this.datePipe.transform(new Date().toLocaleString(), 'yyyy-MM-dd');;        
+        var currentDate = this.datePipe.transform(new Date().toLocaleString(), 'yyyy-MM-dd');
         if (this.appDate > currentDate) {
           this.promptNotify();
         }
@@ -73,15 +80,31 @@ export class HomePage implements OnInit {
       }
     }, error => {
       console.log("Load Failed", error);
-    })
+    });
+  }
+
+  getStatusPembuatanObat(patientID: number) {
+    let postData = JSON.stringify({
+      patientID: this.patientID
+    });
+    this.providerSvc.postData("get_status_obat.php", postData).subscribe(data => {
+      if (data != null) {
+        this.statusPembuatanObat = data;
+        this.empty = 0;
+      } else {
+        this.empty = 1;
+        console.log("No Data Available");
+      }
+    }, error => {
+      console.log("Load Failed", error);
+    });
   }
 
   promptNotify() {
-      this.localNotifications.schedule({
-        id: 1,
-        title: 'Reminder',
-        text: 'Hey'+ this.patientFirstname +', Your have appointment with '+ this.doctorName +' on '+ this.appDate +' We are looking forward to seeing you at '+ this.appTime,
-      });
+    this.localNotifications.schedule({
+      id: 1,
+      title: 'Reminder',
+      text: 'Hey ' + this.patientFirstname + ', You have an appointment with ' + this.doctorName + ' on ' + this.appDate + '. We are looking forward to seeing you at ' + this.appTime,
+    });
   }
-
 }

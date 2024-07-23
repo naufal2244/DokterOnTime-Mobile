@@ -1,0 +1,47 @@
+.content-wrapper {
+    display: grid;
+    grid-template-columns: 1fr; /* Default satu kolom */
+    gap: 10px;
+  
+    @media (min-width: 601px) {
+      grid-template-columns: 1fr 1fr; /* Dua kolom untuk layar besar */
+    }
+  }
+  
+  ion-card {
+    grid-column: 1 / -1; /* Membuat card mengisi satu kolom penuh */
+    margin: 10px 15px; /* margin atas, kanan, bawah, kiri */
+    background-color: #f1f1f1; /* warna abu seperti search box */
+  }
+  
+  ion-item {
+    --background: #ffffff; /* Warna latar belakang default */
+    --background-activated: #e0e0e0; /* Warna latar belakang saat aktif */
+    --background-focused: #ffffff; /* Warna latar belakang saat difokuskan */
+    --background-hover: #f5f5f5; /* Warna latar belakang saat hover */
+    --color: #000000; /* Warna teks */
+    font-size: 12px; /* Mengatur ukuran font untuk teks dalam input */
+    border: 1px solid #ccc; /* Menambahkan border */
+    border-radius: 5px; /* Menambahkan border-radius */
+    margin-bottom: 15px; /* Menambahkan margin bawah untuk pemisahan */
+  }
+  
+  ion-label {
+    font-size: 12px; /* Ukuran font untuk label */
+  }
+  
+  ion-input, ion-textarea {
+    --padding-start: 10px; /* Padding dalam input dan textarea */
+    padding: 5px; /* Padding dalam input dan textarea */
+  }
+  
+  .form-grid {
+    display: grid;
+    grid-template-columns: 1fr; /* Default satu kolom */
+    gap: 10px;
+  
+    @media (min-width: 601px) {
+      grid-template-columns: 1fr 1fr; /* Dua kolom untuk layar besar */
+    }
+  }
+  

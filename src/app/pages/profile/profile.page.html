@@ -1,7 +1,7 @@
 <div class="ion-padding-horizontal page-header">
   <ion-row>
     <ion-col>
-      <h2 class="page-title">Profile</h2>
+      <h2 class="page-title">Profil</h2>
     </ion-col>
     <ion-col class="ion-text-end ion-padding-top">
       <ion-icon size="large" name="log-out" (click)="presentAlertConfirm()"></ion-icon>
@@ -18,31 +18,31 @@
     </ion-col>
     <ion-col class="profile-name">
       <ion-text>
-        <h3 class="ion-no-margin">{{profileLastname}} {{profileFirstname}}</h3>
-        <ion-badge color="warning">{{profileCreated}}</ion-badge>
+        <h3 class="ion-no-margin">{{profileFirstname}} {{profileLastname}} </h3>
+        <!-- <ion-badge color="warning">{{profileCreated}}</ion-badge> -->
       </ion-text>
     </ion-col>
   </ion-row>
 </div>
 
 <ion-content>
-  <h6 class="ion-padding-horizontal section-title"><b>Settings</b></h6>
+  <h6 class="ion-padding-horizontal section-title"><b>Pengaturan</b></h6>
 
   <ion-list>
 
     <ion-item (click)="editInfo()">
       <ion-icon slot="end" name="md-create"></ion-icon>
-      <ion-label>Edit Profile</ion-label>
+      <ion-label>Edit Profil</ion-label>
     </ion-item>
     
-    <ion-item (click)="editAddress()">
+    <!-- <ion-item (click)="editAddress()">
       <ion-icon slot="end" name="md-pin"></ion-icon>
-      <ion-label>Edit Address</ion-label>
-    </ion-item>
+      <ion-label>Edit </ion-label>
+    </ion-item> -->
 
     <ion-item (click)="editPassword()">
       <ion-icon slot="end" name="md-lock"></ion-icon>
-      <ion-label>Change Password</ion-label>
+      <ion-label>Ubah Password</ion-label>
     </ion-item>
 
     <!-- <ion-item>

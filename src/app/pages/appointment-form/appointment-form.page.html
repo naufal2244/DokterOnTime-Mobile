@@ -1,0 +1,78 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref=""></ion-back-button>
+    </ion-buttons>
+    <ion-title>Lengkapi Data</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div class="content-wrapper">
+    <ion-card>
+      <ion-card-content>
+        <div class="form-grid">
+          <div class="form-group">
+            <label>Nama Lengkap</label>
+            <ion-input type="text" placeholder="Nama Lengkap" [(ngModel)]="nama_lengkap"></ion-input>
+          </div>
+          <div class="form-baru">
+            <div class="form-group">
+              <label>Tinggi Badan<br><small style="color: #a9a9a9;">*Isi Hanya dengan Angka.</small></label>
+              <ion-input type="number" placeholder="Contoh: 170" [(ngModel)]="tinggi_badan"></ion-input>
+            </div>
+            <div class="form-group">
+              <label>Berat Badan<br><small style="color: #a9a9a9;">*Isi Hanya dengan Angka.</small></label>
+              <ion-input type="number" placeholder="Contoh: 70" [(ngModel)]="berat_badan"></ion-input>
+            </div>
+            <div class="form-group">
+              <label>Tanggal Lahir</label>
+              <ion-input type="date" placeholder="Tanggal Lahir" [(ngModel)]="tanggal_lahir"></ion-input>
+            </div>
+          </div>
+          <div class="form-group">
+            <label>Email</label>
+            <ion-input type="email" placeholder="email" [(ngModel)]="email"></ion-input>
+          </div>
+          <div class="form-group">
+            <label>No HP</label>
+            <ion-input type="tel" placeholder="No HP" [(ngModel)]="no_hp"></ion-input>
+          </div>
+          <div class="form-group">
+            <label>Keluhan</label>
+            <ion-input type="text" placeholder="Contoh: Sakit Kepala" [(ngModel)]="keluhan"></ion-input>
+          </div>
+          <div class="form-group">
+            <label>Deskripsi Keluhan</label>
+            <ion-textarea placeholder="Contoh: Sakit kepala sebelah kanan yang terasa nyeri setiap kali bergerak." [(ngModel)]="deskripsi_keluhan"></ion-textarea>
+          </div>
+          <div class="form-group">
+            <label>Riwayat Penyakit<br><small style="color: #a9a9a9;">*Isi jika memiliki riwayat penyakit kronis.</small></label>
+            <ion-button expand="block" (click)="openModal('penyakit')">Pilih Riwayat Penyakit</ion-button>
+          </div>
+          <div class="form-group">
+            <label>Riwayat Penyakit Keluarga <br><small style="color: #a9a9a9;">*Isi jika ada anggota keluarga yang memiliki riwayat penyakit kronis.</small></label>
+            <ion-button expand="block" (click)="openModal('ortu')">Pilih Riwayat Penyakit</ion-button>
+          </div>
+          <div class="form-group">
+            <label>Riwayat Alergi <br><small style="color: #a9a9a9;">*Isi jika memiliki riwayat alergi.</small></label>
+            <ion-button expand="block" (click)="openModal('alergi')">Pilih Riwayat Alergi</ion-button>
+          </div>
+          <div class="form-group">
+            <label>Riwayat Operasi <br><small style="color: #a9a9a9;">*Isi jika ada riwayat operasi dalam 5 tahun terakhir.</small></label>
+            <ion-button expand="block" (click)="openModal('operasi')">Pilih Riwayat Operasi</ion-button>
+          </div>
+          <div class="form-group">
+            <label >Riwayat Perawatan <br><small style="color: #a9a9a9;">*Isi jika ada riwayat perawatan dalam 5 tahun terakhir.</small></label>
+            <ion-button expand="block" (click)="openModal('pengobatan')">Pilih Riwayat Perawatan</ion-button>
+          </div>
+         
+        </div>
+      </ion-card-content>
+    </ion-card>
+  </div>
+</ion-content>
+
+<ion-footer no-border>
+  <ion-button expand="block" color="tertiary" (click)="submitAppointmentForm()">Simpan</ion-button>
+</ion-footer>

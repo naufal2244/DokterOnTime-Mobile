@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Test Page</title>
+  <style>
+    .ticket {
+      background: white;
+      border-radius: 15px;
+      padding: 20px;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+      margin: 20px;
+      position: relative;
+      overflow: hidden;
+      max-width: 600px; /* Tambahkan ini untuk membatasi lebar */
+    }
+
+    .left-info {
+      display: grid;
+      grid-template-columns: auto 1fr;
+      grid-gap: 10px;
+      align-items: center;
+    }
+
+    .left-info p {
+      display: contents;
+    }
+
+    .label {
+      font-weight: bold;
+      margin-right: 2px; /* Kurangi margin di sini */
+      white-space: nowrap;
+    }
+
+    .value {
+      text-align: right; /* Pastikan teks rata kanan */
+      white-space: nowrap;
+    }
+  </style>
+</head>
+<body>
+  <div class="ticket">
+    <div class="left-info">
+      <p><span class="label">RS:</span><span class="value">Nama Rumah Sakit</span></p>
+      <p><span class="label">Poli:</span><span class="value">Poli Umum</span></p>
+      <p><span class="label">Nama Dokter:</span><span class="value">Bianca Fransnadia</span></p>
+      <p><span class="label">Tanggal Kunjungan:</span><span class="value">01-07-2024</span></p>
+      <p><span class="label">Waktu Kunjungan:</span><span class="value">15:00 - 17:00</span></p>
+    </div>
+  </div>
+</body>
+</html>

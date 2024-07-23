@@ -1,0 +1,76 @@
+.session-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* Dua kolom */
+    gap: 10px;
+    margin-bottom: 20px;
+    /* Menambahkan padding kanan dan kiri untuk grid */
+
+    @media (max-width: 400px) {
+      grid-template-columns: 1fr; /* Satu kolom untuk layar kecil */
+    }
+
+    @media (min-width: 601px) and (max-width: 768px) {
+      padding: 0 5px; /* Mengurangi padding untuk layar menengah */
+    }
+  }
+
+  .session-button {
+    // border: 1px solid #000;
+    // border-radius: 12px; /* Menyesuaikan border-radius */
+    // --border-radius: 12px; /* Menambahkan border-radius ke variabel CSS Ion */
+    // // --background: #ffffff; /* Warna latar belakang default */
+    // // --background-activated: #e0e0e0; /* Warna latar belakang saat aktif */
+    // // --background-focused: #ffffff; /* Warna latar belakang saat difokuskan */
+    // // --background-hover: #f5f5f5; /* Warna latar belakang saat hover */
+    // // --color: #000000; /* Warna teks */
+    font-size: 12px; /* Mengatur ukuran font untuk teks dalam tombol */
+    box-sizing: border-box; /* Memastikan padding dan border termasuk dalam ukuran total */
+    width: 100%; /* Mengatur lebar tombol */
+    height: 40px; /* Menentukan tinggi tombol agar semua tombol seragam */
+    display: flex; /* Menggunakan Flexbox untuk menyelaraskan konten */
+    align-items: center; /* Menyelaraskan konten secara vertikal */
+    padding: 0 10px; /* Menentukan padding horizontal */
+
+    justify-content: flex-start; /* Menyelaraskan konten secara horizontal ke kiri */
+    text-align: left; /* Menyelaraskan teks ke kiri */
+    
+    // margin-right: 10px;
+    // margin-left: 10px;
+    @media (max-width: 600px) {
+      font-size: 12px; /* Mengurangi ukuran font untuk layar kecil */
+      padding: 0 0px; /* Mengurangi padding untuk layar kecil */
+    }
+
+  }
+
+  .selected-date {
+    margin: 20px 15px 10px 15px;
+    font-size: 14px;
+    color: rgba(0, 0, 0, 0.6);
+    font-weight: 700; /* 700 juga merupakan nilai untuk membuat teks menjadi bold */
+  }
+
+  .content-wrapper {
+    display: grid;
+    grid-template-columns: 1fr; /* Satu kolom untuk card */
+    grid-template-rows: auto auto; /* Dua baris, satu untuk card dan satu untuk tombol */
+    gap: 10px;
+  }
+
+  .button-wrapper {
+    display: flex;
+    justify-content: flex-end; /* Menyelaraskan tombol ke kanan */
+    margin-right: 15px;
+  }
+
+  .next-button {
+    border-radius: 12px; /* Menyesuaikan border-radius untuk tombol "Selanjutnya" */
+    font-size: 12px; /* Mengatur ukuran font untuk mengecilkan teks dalam tombol */
+    width: 130px; /* Menentukan lebar tombol */
+  }
+
+  ion-card {
+    grid-column: 1 / -1; /* Membuat card mengisi satu kolom penuh */
+    margin: 10px 15px 0 15px; /* margin atas, kanan, bawah, kiri */
+    background-color: #f1f1f1; /* warna abu seperti search box */
+  }

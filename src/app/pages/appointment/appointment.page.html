@@ -1,5 +1,5 @@
 <div class="ion-padding-horizontal ion-margin-top">
-  <h2 class="page-title">Your Appointments</h2>
+  <h2 class="page-title">Janji Temu</h2>
 </div>
 
 <ion-content>
@@ -12,26 +12,36 @@
   </ion-refresher>
 
   <div class="appointment-section">
-    <h6 class="ion-padding-horizontal section-title"><b>List</b></h6>
+    <h6 class="ion-padding-horizontal section-title"><b>Janji Temu yang akan Datang</b></h6>
 
     <div *ngIf="empty != 0" class="ion-padding-horizontal">
-      <h6>No Appointment Found</h6>
+      <h6>Anda belum membuat janji temu</h6>
     </div>
 
     <div *ngFor="let item of items">
-      <ion-card (click)="appointmentProfile(item.app_id)">
+      <ion-card (click)="appointmentProfile(item.id_janji_temu)">
         <ion-row>
           <ion-col>
             <ion-label>
-              <h5><b>Dr. {{item.doctor_lastname}} {{item.doctor_firstname}}</b></h5>
-              <h6>{{item.speciality_name}}</h6>
-              <ion-badge color="success">{{item.app_date}}, {{item.app_time}}</ion-badge>
+              <h2 style="display: flex;">
+                <b>{{item.clinic_name}}</b>
+              </h2>
+              <h5><b>Dr. {{item.doctor_firstname}} {{item.doctor_lastname}} </b></h5>
+              <h6>Poli {{item.speciality_name}}</h6>
+
+              <div class="icon-custom">
+              <ion-badge color="success"> <ion-icon name="md-calendar" class="icon "></ion-icon>{{item.tanggal_janji}}  </ion-badge><br>
+              <ion-badge color="success"><ion-icon name="md-time" class="icon  "></ion-icon>{{item.session_start}} - {{item.session_end}}</ion-badge><br>
+
+              <ion-badge [color]="item.tensi ? 'primary' : 'danger'">
+                <ion-icon [name]="item.tensi ? 'md-checkmark-circle' : 'md-alert'" class="icon "></ion-icon>
+                {{item.tensi ? 'Data tensi sudah terisi' : 'Data tensi belum terisi'}}
+              </ion-badge>
+            </div>
             </ion-label>
           </ion-col>
         </ion-row>
       </ion-card>
-
     </div>
   </div>
-
 </ion-content>

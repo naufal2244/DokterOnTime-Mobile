@@ -64,18 +64,18 @@ export class ProfilePage implements OnInit {
 
   async presentAlertConfirm() {
     const alert = await this.alertCtrl.create({
-      header: 'Confirmation',
-      message: 'Are you sure want <strong>Log Out</strong>?',
+      header: 'Konfirmasi',
+      message: 'Apakah Anda yakin ingin <strong>Keluar</strong>?',
       buttons: [
         {
-          text: 'Cancel',
+          text: 'Batalkan',
           role: 'cancel',
           cssClass: 'secondary',
           handler: (blah) => {
             
           }
         }, {
-          text: 'Log Out',
+          text: 'Keluar',
           handler: () => {
             this.LogOut();
           }

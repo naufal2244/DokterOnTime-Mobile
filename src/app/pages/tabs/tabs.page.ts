@@ -3,7 +3,6 @@ import { ActivatedRoute } from '@angular/router';
 import { ProviderService } from 'src/app/services/provider.service';
 import { Storage } from '@ionic/storage';
 
-
 @Component({
   selector: 'app-tabs',
   templateUrl: './tabs.page.html',
@@ -11,45 +10,36 @@ import { Storage } from '@ionic/storage';
 })
 export class TabsPage implements OnInit {
   id: number;
+  appointmentBadge: number;
 
-  constructor(public activatedRoute: ActivatedRoute, private providerSvc: ProviderService, private storage: Storage) { }
+  constructor(public activatedRoute: ActivatedRoute, private providerSvc: ProviderService, private storage: Storage) {}
 
   ngOnInit() {
-    // ! Try Weather Pass through the Tabs
-    // this.activatedRoute.queryParams.subscribe((res) => {
-    //   console.log(JSON.parse(res.value));
-    // });
     this.storage.get('USER_INFO').then(data => {
-      if(data != null) {
+      if (data != null) {
         this.id = data[0].patient_id;
-        this.getMessage(this.id);
+        this.getAppointments(this.id);
       }
     }, error => {
       console.log(error);
     });
   }
 
-  items: any;
-  badge: number;
-
-  getMessage(id:number) {
+  getAppointments(id: number) {
     let postData = JSON.stringify({
       patientID: id
     });
 
-    this.providerSvc.postData('message.php', postData)
-      .subscribe(data => {
+    this.providerSvc.postData('appointment-list.php', postData)
+      .subscribe((data: any[]) => {
         if (data != null) {
-          this.items = data;
-
-          this.badge = this.items.length;
+          this.appointmentBadge = data.length;
         } else {
-          this.badge = 0;
+          this.appointmentBadge = 0;
           console.log('No Data Available');
         }
       }, error => {
         console.log('Load Failed', error);
       });
   }
-
 }
