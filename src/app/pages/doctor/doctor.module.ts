@@ -1,14 +1,12 @@
-import { AppointmentDetailPage } from '../appointment-detail/appointment-detail.page';
-import { ReviewDetailsPage } from '../review-details/review-details.page';
-import { DoctorPage } from './doctor.page';
-
+// src/app/pages/doctor/doctor.module.ts
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { Routes, RouterModule } from '@angular/router';
 
 import { IonicModule } from '@ionic/angular';
-
+import { DoctorPage } from './doctor.page';
+import { SharedModule } from '../shared/shared.module'; // Impor SharedModule
 
 const routes: Routes = [
   {
@@ -22,9 +20,10 @@ const routes: Routes = [
     CommonModule,
     FormsModule,
     IonicModule,
-    RouterModule.forChild(routes)
+    RouterModule.forChild(routes),
+    SharedModule // Tambahkan SharedModule di sini
   ],
-  declarations: [DoctorPage, AppointmentDetailPage, ReviewDetailsPage],
-  entryComponents: [AppointmentDetailPage, ReviewDetailsPage],
+  declarations: [DoctorPage],
+  entryComponents: [],
 })
 export class DoctorPageModule {}
