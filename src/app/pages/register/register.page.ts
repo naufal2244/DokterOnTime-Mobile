@@ -25,10 +25,10 @@ export class RegisterPage implements OnInit {
       if (this.formData.lastname.match(this.ctrl.pattern.text) && this.formData.firstname.match(this.ctrl.pattern.text)) {
         if (this.formData.email.match(this.ctrl.pattern.email)) {
           if (this.formData.password.length < 8) {
-            this.ctrl.alertPopUp("Attention", "Password Must At Least 8 Character", "OK");
+            this.ctrl.alertPopUp("Perhatian", "Kata Sandi Harus Terdiri dari Setidaknya 8 Karakter", "OK");
           } else {
             if (this.formData.password != this.formData.confirm_password ) {
-              this.ctrl.alertPopUp("Attention", "Confirm Password not Same", "OK");
+              this.ctrl.alertPopUp("Perhatian", "Konfirmasi Kata Sandi Tidak Sama", "OK");
             } else {
               this.ctrl.presentLoading();
             
@@ -41,10 +41,10 @@ export class RegisterPage implements OnInit {
     
               this.providerSvc.postData("register.php", dataPost).subscribe(res => {
                 if (res[0] == 1) {
-                  this.ctrl.alertPopUp("Successful", "Added", "OK");
+                  this.ctrl.alertPopUp("Akun Berhasil Dibuat!", "Silakan masuk dengan akun yang telah dibuat.", "OK");
                   this.router.navigate(["login"]);
                 } else {
-                  this.ctrl.alertPopUp("Attention", "Email Already Exist", "OK");
+                  this.ctrl.alertPopUp("Perhatian", "Email Sudah digunakan", "OK");
                 }
               }, error => {
                 console.log(error);
@@ -52,13 +52,13 @@ export class RegisterPage implements OnInit {
             }
           }
         } else {
-          this.ctrl.alertPopUp("Attention", "Invalid Email Format", "OK");
+          this.ctrl.alertPopUp("Perhatian", "Format Email Tidak Valid", "OK");
         }
       } else {
-        this.ctrl.alertPopUp("Attention", "First/Lastname only text allow", "OK");
+        this.ctrl.alertPopUp("Perhatian", "Nama Depan/Belakang Hanya Boleh diisi dengan Teks", "OK");
       }
     } else {
-      this.ctrl.alertPopUp("Attention", "All fields are required", "OK");
+      this.ctrl.alertPopUp("Perhatian", "Semua Isian Harus diisi", "OK");
     }
   }
 

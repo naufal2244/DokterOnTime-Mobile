@@ -2,23 +2,23 @@
 
     <div class="ion-padding section-title">
       <ion-text>
-        <h1>Registrasi Sekarang!</h1>
-        <div>Daftar Sekarang untuk Membuat Janji Temu</div>
+        <h1>Registrasi Akun</h1>
+        <div>Daftar Sekarang untuk Membuat Janji Temu!</div>
       </ion-text>
     </div>
   
     <form class="ion-padding">
-
+      <label for=""><small><b>*Kami Tidak Akan Membagikan Informasi Pribadi Anda</b></small></label>
       <ion-item>
-        <ion-input type="text" name="name" value="" placeholder="First Name" [(ngModel)]="formData.firstname" required></ion-input>
+        <ion-input type="text" name="name" value="" placeholder="Nama Depan" [(ngModel)]="formData.firstname" required></ion-input>
       </ion-item>
 
       <ion-item>
-        <ion-input type="text" name="name" value="" placeholder="Last Name/ Surname" [(ngModel)]="formData.lastname" required></ion-input>
+        <ion-input type="text" name="name" value="" placeholder="Nama Belakang" [(ngModel)]="formData.lastname" required></ion-input>
       </ion-item>
 
       <ion-item>
-        <ion-input type="text" name="identity" value="" placeholder="Identity Number/ Passport Number" [(ngModel)]="formData.identity" required></ion-input>
+        <ion-input type="text" name="identity" value="" placeholder="Nomor KTP" [(ngModel)]="formData.identity" required></ion-input>
       </ion-item>
 
       <ion-item>
@@ -26,17 +26,17 @@
       </ion-item>
   
       <ion-item>
-        <ion-input type="password" name="password" value="" placeholder="Password" [(ngModel)]="formData.password" required></ion-input>
+        <ion-input type="password" name="password" value="" placeholder="Kata Sandi" [(ngModel)]="formData.password" required></ion-input>
       </ion-item>
       
       <ion-item>
-        <ion-input type="password" name="confirm_password" value="" placeholder="Confirm Password" [(ngModel)]="formData.confirm_password" required></ion-input>
+        <ion-input type="password" name="confirm_password" value="" placeholder="Konfirmasi Kata Sandi" [(ngModel)]="formData.confirm_password" required></ion-input>
       </ion-item>
   
       <div class="ion-margin-top">
-        <ion-button (click)="RegisterUser()" expand="block" color="warning">Registrasi</ion-button>
+        <ion-button (click)="RegisterUser()" expand="block" color="warning">Daftar</ion-button>
         <ion-text routerLink="/login" class="ion-text-center">
-          <p>Sudah Punya Akun</p>
+          <p>Sudah Punya Akun?</p>
         </ion-text>
       </div>
   

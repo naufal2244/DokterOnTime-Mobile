@@ -65,7 +65,7 @@ export class ProfilePage implements OnInit {
   async presentAlertConfirm() {
     const alert = await this.alertCtrl.create({
       header: 'Konfirmasi',
-      message: 'Apakah Anda yakin ingin <strong>Keluar</strong>?',
+      message: 'Apakah Anda Yakin Ingin <strong>Keluar</strong>?',
       buttons: [
         {
           text: 'Batalkan',

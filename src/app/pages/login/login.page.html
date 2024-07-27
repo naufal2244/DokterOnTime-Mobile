@@ -4,7 +4,7 @@
     <ion-text>
       <h1>Halo!</h1>
       <h3>Selamat Datang di DokterOnTime</h3>
-      <div>Sign In to Book an Appointment</div>
+      <div>Masuk untuk Buat Janji Temu</div>
     </ion-text>
   </div>
 
@@ -15,16 +15,16 @@
     </ion-item>
 
     <ion-item>
-      <ion-input type="password" name="password" value="" placeholder="Password" [(ngModel)]="formData.password" required></ion-input>
+      <ion-input type="password" name="password" value="" placeholder="Sandi" [(ngModel)]="formData.password" required></ion-input>
     </ion-item>
 
     <div class="ion-margin-top">
-      <ion-text routerLink="/forgot" class="ion-text-right">
-        <p>Lupa Password</p>
-      </ion-text>
+      <!-- <ion-text routerLink="/forgot" class="ion-text-right">
+        <p>Lupa Sandi</p>
+      </ion-text> -->
       <ion-button (click)="LoginUser()" expand="block" color="warning">Masuk</ion-button>
       <ion-text (click)="Register()" class="ion-text-center">
-        <p>Buat Akun</p>
+        <p>Belum Punya Akun?</p>
       </ion-text>
     </div>
 

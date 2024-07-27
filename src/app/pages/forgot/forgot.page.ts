@@ -23,18 +23,18 @@ export class ForgotPage implements OnInit {
         dataPost.append('inputEmail', this.formData.email);
         this.providerSvc.postData('forgot.php', dataPost).subscribe(res => {
           if (res[0] == 1) {
-            this.ctrl.alertPopUp("Email Verification", "Sent", "OK");
+            this.ctrl.alertPopUp("Verifikasi Email", "Kirim", "OK");
           } else {
-            this.ctrl.alertPopUp("Attention", "Email Not Exist", "OK");
+            this.ctrl.alertPopUp("Perhatian", "Email tidak terdaftar", "OK");
           }
         }, error => {
           console.log(error);
         });
       } else {
-        this.ctrl.alertPopUp("Attention", "Invalid Email Format", "OK");
+        this.ctrl.alertPopUp("Perhatian", "Invalid Email Format", "OK");
       }
     } else {
-      this.ctrl.alertPopUp("Attention", "Please fill Up", "OK");
+      this.ctrl.alertPopUp("Perhatian", "Silahkan Diisi", "OK");
     }
   }
 

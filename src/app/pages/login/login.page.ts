@@ -31,10 +31,10 @@ export class LoginPage implements OnInit {
       if (this.formData.email.match(this.ctrl.pattern.email)) {
         this.authSerive.login(this.formData.email, this.formData.password);
       } else {
-        this.alertPopUp("Attention", "Invalid Email Format!", "Try Again");
+        this.alertPopUp("Perhatian", "Format Email Tidak Valid!", "Coba Lagi");
       }
     } else {
-      this.alertPopUp("Attention", "Email & Password Field is Empty!", "Try Again");
+      this.alertPopUp("Perhatian", "Email & Sandi Kosong!", "Coba Lagi");
     }
   }
 
