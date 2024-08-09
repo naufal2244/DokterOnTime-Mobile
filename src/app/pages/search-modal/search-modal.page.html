@@ -15,7 +15,7 @@
 
     <ion-item *ngFor="let item of items" (click)="doctorProfile(item.doctor_id)">
       <ion-avatar slot="start">
-        <img src="{{imgURL}}{{item.clinic_id}}/doctor/{{item.doctor_avatar}}">
+        <ion-icon name="md-person" class="large-icon"></ion-icon>
       </ion-avatar>
       <ion-label>
         <h2>{{item.doctor_firstname}} {{item.doctor_lastname}} </h2>

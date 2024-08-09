@@ -27,6 +27,12 @@ ion-toolbar {
     ion-card {
         margin: 20px 0;
         background-color: white;
+        padding: 20px;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 150px; /* Tinggi dari card, sesuaikan dengan keinginan */
     }
 
     ion-img {
@@ -104,3 +110,7 @@ ion-toolbar {
     width: 100%; /* Membuat datetime picker mengisi seluruh lebar kotak */
   }
   
+  .large-icon {
+    font-size: 100px; /* Sesuaikan dengan ukuran yang diinginkan */
+    color: #666; /* Warna ikon */
+  }

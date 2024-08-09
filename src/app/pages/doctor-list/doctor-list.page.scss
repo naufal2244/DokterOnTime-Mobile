@@ -1,0 +1,14 @@
+.large-icon {
+    font-size: 40px; /* Sesuaikan ukuran ikon sesuai kebutuhan */
+     /* Pastikan ikon rata tengah dengan teks */
+    display: block;
+    margin: auto;
+    color: #666; /* Warna ikon */
+  }
+  
+  ion-avatar {
+    display: flex;
+    align-items: center; /* Vertikal rata tengah dengan teks */
+    justify-content: center; /* Horizontally center the icon */
+  }
+  

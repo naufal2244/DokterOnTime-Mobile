@@ -21,7 +21,6 @@ const routes: Routes = [
     FormsModule,
     IonicModule,
     RouterModule.forChild(routes)
-  ],
-  declarations: [AppointmentDetailPage]
+  ]
 })
 export class AppointmentDetailPageModule {}

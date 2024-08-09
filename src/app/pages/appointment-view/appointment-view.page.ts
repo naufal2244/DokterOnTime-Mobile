@@ -4,6 +4,7 @@ import { ProviderService } from 'src/app/services/provider.service';
 import { DatePipe } from '@angular/common';
 import { AlertController, ModalController } from '@ionic/angular';
 import { ReviewPage } from '../review/review.page';
+import { SharedModule } from '../shared/shared.module';
 
 @Component({
   selector: 'app-appointment-view',

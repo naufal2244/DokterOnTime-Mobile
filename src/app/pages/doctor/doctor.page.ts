@@ -9,7 +9,7 @@
   import { DatePipe } from '@angular/common';
   import { Storage } from '@ionic/storage';
   import { ControllersService } from 'src/app/services/controllers.service';
-  
+  import { SharedModule } from '../shared/shared.module';
 
   @Component({
     selector: 'app-doctor',

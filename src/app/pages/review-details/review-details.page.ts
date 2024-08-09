@@ -2,6 +2,7 @@ import { Component, OnInit, Input } from '@angular/core';
 import { ModalController } from '@ionic/angular';
 import { ProviderService } from 'src/app/services/provider.service';
 
+import { SharedModule } from '../shared/shared.module';
 @Component({
   selector: 'app-review-details',
   templateUrl: './review-details.page.html',

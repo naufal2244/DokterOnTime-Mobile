@@ -3,6 +3,7 @@ import { ModalController, ToastController, AlertController } from '@ionic/angula
 import { ProviderService } from 'src/app/services/provider.service';
 import { Router } from '@angular/router';
 import { ControllersService } from 'src/app/services/controllers.service';
+import { SharedModule } from '../shared/shared.module';
 
 @Component({
   selector: 'app-appointment-detail',
